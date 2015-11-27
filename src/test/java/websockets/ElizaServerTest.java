@@ -73,7 +73,6 @@ public class ElizaServerTest {
 			@Override
 			public void onOpen(Session session, EndpointConfig config) {
 
-				// COMPLETE
 				session.getAsyncRemote().sendText("Hi");
 
 				session.addMessageHandler(new MessageHandler.Whole<String>() {
@@ -81,14 +80,13 @@ public class ElizaServerTest {
 					@Override
 					public void onMessage(String message) {
 						list.add(message);
-						// COMPLETE
 						latch.countDown();
 					}
 				});
 			}
 
 		}, configuration, new URI("ws://localhost:8025/websockets/eliza"));
-		// COMPLETE
+
 		latch.await();
 		assertEquals(5, list.size());
 		assertEquals("The doctor is in.", list.get(0));
