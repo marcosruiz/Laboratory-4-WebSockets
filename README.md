@@ -30,7 +30,7 @@ Agustin Navarro Torres | 587570 | [repo](https://github.com/SirBargus/Laboratory
 Alejandro Solanas Bonilla | 647647
 Christian García Artero | 597578
 Luis Jesus Pellicer | 520256 | [repo](https://github.com/luisjesuspellicer/Laboratory-4-WebSockets) |[![Build Status](https://travis-ci.org/luisjesuspellicer/Laboratory-4-WebSockets.svg)](https://travis-ci.org/luisjesuspellicer/Laboratory-4-WebSockets)
-Marcos Ruiz García | 648045 | [repo](https://github.com/marcosruiz/Laboratory-4-WebSockets) |[![Build Status](https://travis-ci.org/marcosruiz/Laboratory-4-WebSockets.svg)](https://travis-ci.org/marcosruiz/Laboratory-4-WebSockets)
+Marcos Ruiz García | 648045 | [repo](https://github.com/marcosruiz/Laboratory-4-WebSockets) |[![Build Status](https://travis-ci.org/marcosruiz/Laboratory-4-WebSockets.svg?branch=master)](https://travis-ci.org/marcosruiz/Laboratory-4-WebSockets)
 Óscar Meler Murillo | 608919
 Aron Collados Torres | 626558
 Diego Sánchez Castillo | 628279
