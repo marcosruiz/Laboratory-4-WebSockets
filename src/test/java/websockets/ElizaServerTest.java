@@ -62,9 +62,9 @@ public class ElizaServerTest {
 	}
 
 	@Test(timeout = 1000)
-	@Ignore
 	public void onChat() throws DeploymentException, IOException, URISyntaxException, InterruptedException {
 		// COMPLETE
+		CountDownLatch latch = new CountDownLatch(5);
 		List<String> list = new ArrayList<>();
 		ClientEndpointConfig configuration = ClientEndpointConfig.Builder.create().build();
 		ClientManager client = ClientManager.createClient();
@@ -74,6 +74,7 @@ public class ElizaServerTest {
 			public void onOpen(Session session, EndpointConfig config) {
 
 				// COMPLETE
+				session.getAsyncRemote().sendText("Hi");
 
 				session.addMessageHandler(new MessageHandler.Whole<String>() {
 
@@ -81,14 +82,16 @@ public class ElizaServerTest {
 					public void onMessage(String message) {
 						list.add(message);
 						// COMPLETE
+						latch.countDown();
 					}
 				});
 			}
 
 		}, configuration, new URI("ws://localhost:8025/websockets/eliza"));
 		// COMPLETE
-		// COMPLETE
-		// COMPLETE
+		latch.await();
+		assertEquals(5, list.size());
+		assertEquals("The doctor is in.", list.get(0));
 	}
 
 	@After
